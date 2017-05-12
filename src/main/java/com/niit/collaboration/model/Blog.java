@@ -17,7 +17,7 @@ import oracle.sql.DATE;
 @Component
 @Entity
 @Table(name="c_blog")
-public class Blog {
+public class Blog extends BaseDomain {
 	@Id
 	private String id;
 	
