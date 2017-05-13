@@ -32,17 +32,16 @@ public class UserDAOTestCase {
 		 
 	}
 	
-	/*@Test */
+	@Test
 	public void createUserTestCase()
 	{
-		user.setId("manish3");
-		user.setName("manish");
-		user.setName("manish");
-		user.setRole("Student");
+		user.setId("Niit");
+		user.setName("Niit");
+		user.setRole("admin");
 		user.setAddress("Andheri W");
-		user.setEmail("manish@gmail.com");
+		user.setEmail("niit@gmail.com");
 		user.setMobile("999999999");
-		user.setPassword("11");
+		user.setPassword("123");
 	       boolean flag =	userDAO.save(user);
 	       
 	       assertEquals("createUserTestCase ",true, flag);
@@ -72,7 +71,7 @@ public class UserDAOTestCase {
 		
 		
 	}
-	@Test
+	
 	public void isValidUserTest(){
 	
 	user = userDAO.isValidCredentials("rajeev","gggg");

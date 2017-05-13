@@ -19,6 +19,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import com.niit.collaboration.model.Blog;
 import com.niit.collaboration.model.Chat;
 import com.niit.collaboration.model.ChatForum;
+import com.niit.collaboration.model.Friend;
 import com.niit.collaboration.model.Job;
 import com.niit.collaboration.model.JobApplication;
 import com.niit.collaboration.model.User;
@@ -69,7 +70,7 @@ public class ApplicationContextConfig {
 		sessionBuilder.addAnnotatedClass(ChatForum.class);
 		sessionBuilder.addAnnotatedClass(Job.class);
 		sessionBuilder.addAnnotatedClass(JobApplication.class);
-
+		sessionBuilder.addAnnotatedClass(Friend.class);
 		logger.debug("Ending of the method getSessionFactory");
 		return sessionBuilder.buildSessionFactory();
 	}
