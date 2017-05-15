@@ -60,7 +60,7 @@ public class FriendDAOImpl implements FriendDAO {
 		List<Friend> list2 = sessionFactory.openSession().createQuery(hql2).list();
 
 		list1.addAll(list2);
-
+log.debug("array count"+list1.size());
 		return list1;
 	}
 
@@ -104,7 +104,7 @@ public class FriendDAOImpl implements FriendDAO {
 	}
 
 	public List<Friend> getNewFriendRequests(String user_id) {
-		String hql = "select friend_id from Friend where friend_id=" + "'" + user_id + "' and status ='" + "R'";
+		String hql = "select user_id from Friend where friend_id=" + "'" + user_id + "' and status ='" + "R'";
 
 		log.debug(hql);
 		 return  sessionFactory.openSession().createQuery(hql).list();
