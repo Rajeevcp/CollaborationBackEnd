@@ -65,7 +65,7 @@ log.debug("array count"+list1.size());
 	}
 
 	public Friend get(String friend_id,String user_id) {
-		String hql = "from Friend where user_id=" + "'" + user_id + "' and friend_id= '" + friend_id + "'";
+		String hql = "from Friend where user_id=" + "'" + user_id + "' and friend_id= '" + friend_id + "' and status= 'R' ";
 
 		log.debug("hql: " + hql);
 		Query query = sessionFactory.openSession().createQuery(hql);
@@ -91,6 +91,7 @@ log.debug("array count"+list1.size());
 	public boolean update(Friend friend) {
 		try {
 			log.debug("Starting of the method update");
+			log.debug("user ID : " + friend.getUser_id() + " Friend id :" + friend.getFriend_id());
 			log.debug("user ID : " + friend.getUser_id() + " Friend id :" + friend.getFriend_id());
 			sessionFactory.getCurrentSession().update(friend);
 			log.debug("Successfully updated");
