@@ -17,10 +17,10 @@ import oracle.sql.TIMESTAMP;
 @Component
 @Entity
 @Table(name = "c_chat")
-public class Chat {
+public class Chat extends BaseDomain {
 
 	@Id
-	private String id;
+	private Integer id;
 
 	private String user_id;
 
@@ -32,11 +32,11 @@ public class Chat {
 
 	private String message;
 
-	public String getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

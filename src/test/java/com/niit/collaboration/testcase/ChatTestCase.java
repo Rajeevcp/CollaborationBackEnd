@@ -34,13 +34,14 @@ public class ChatTestCase {
 		chatDAO = (ChatDAO) context.getBean("chatDAO");
 
 	}
-	/*@Test*/
+	@Test
 	public void createChat(){
-		chat.setId("c003");
-		chat.setFriend_id("b002");
-		chat.setUser_id("b003");
-		chat.setMessage("bbbbbb");
-		chatDAO.save(chat);
+		//chat.setId("c003");
+		chat.setFriend_id("rajeev");
+		chat.setUser_id("Niit");
+		chat.setMessage("HII HOW ARE YOU");
+		boolean flag=chatDAO.save(chat);
+		assertEquals("createChat",true,flag);
 	}
 	/*@Test*/
 	public void getFriend(){
@@ -55,10 +56,15 @@ public class ChatTestCase {
 		assertEquals("getFriend", 2, chatuser.size());
 	}
 	
-	@Test
+	
 	public void deleteChat(){
 		chat = (Chat) chatDAO.list("b001");
 		boolean flag = chatDAO.delete(chat);
 		Assert.assertEquals("deleteChat",true,flag);
+	}
+	
+	public void listChat(){
+		List<Chat> chats=  chatDAO.getChatByFriend("b003", "b002");
+		assertEquals("getFriend", 1, chats.size());
 	}
 	}

@@ -163,4 +163,9 @@ log.debug("array count"+list1.size());
 		return  sessionFactory.openSession().createQuery(hql).list();
 	}
 
+	public List<Friend> getNonFriendUsers(String user_id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

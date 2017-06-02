@@ -12,6 +12,6 @@ public interface ChatDAO {
 	
 	public boolean delete(Chat chat);
 	
-	public List<Chat> getChatByFriend(String id1,String id2);
+	public List<Chat> getChatByFriend(String user_id,String friend_id);
 
 }

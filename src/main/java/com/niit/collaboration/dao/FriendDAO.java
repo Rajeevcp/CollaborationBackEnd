@@ -15,6 +15,8 @@ public interface FriendDAO {
 	public boolean update(Friend friend);
 
 	public List<Friend> getNewFriendRequests(String user_id);
+	
+	public List<Friend> getNonFriendUsers(String user_id);
 
 	public boolean setOnline(String user_id);
 
