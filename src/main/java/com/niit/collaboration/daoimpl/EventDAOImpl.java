@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 
 import com.niit.collaboration.dao.EventDAO;
 import com.niit.collaboration.model.Event;
+import com.niit.collaboration.model.Job;
 @Transactional
 @Repository("eventDAO")
 public class EventDAOImpl implements EventDAO {
@@ -67,5 +68,11 @@ public class EventDAOImpl implements EventDAO {
 			return false;
 		}
 	}
+	
+	public Event getEventById(String event_id) {
+		Event event = (Event) sessionFactory.getCurrentSession().createQuery("from Event where id ='"+event_id+ "' ").uniqueResult();
+		return event;
+	}
+
 
 }
